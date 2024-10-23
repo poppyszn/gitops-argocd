@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: solar-system
+  name: nginx
   labels:
-    app: solar-system
+    app: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: solar-system
-  strategy: {}
+      app: nginx
   template:
     metadata:
       labels:
-        app: solar-system
+        app: nginx
     spec:
       containers:
-        - name: solar-system
-          image: siddharth67/solar-system:v3
+        - name: nginx
+          image: nginx:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
